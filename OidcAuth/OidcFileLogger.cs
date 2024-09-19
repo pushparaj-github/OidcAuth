@@ -36,5 +36,3 @@ namespace OidcAuth
     }
 }
 
-//var logger = new SimpleFileLogger("log.txt");
-//logger.Log("This is a log message.");
