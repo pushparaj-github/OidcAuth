@@ -5,7 +5,6 @@ using System.Net;
 using System.Text;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using NetCoreConsoleClient;
 
 
 namespace OidcAuth
@@ -74,7 +73,19 @@ namespace OidcAuth
             };
 
             var client = new OidcClient(options);
-            var state = await client.PrepareLoginAsync();
+            //var state = await client.PrepareLoginAsync();
+
+            AuthorizeState state = null;
+
+            try
+            {
+                state = await client.PrepareLoginAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while preparing the login.");
+                return null; // or handle the error as needed
+            }
 
             //Console.WriteLine($"Start URL: {state.StartUrl}");
 

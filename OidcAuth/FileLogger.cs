@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace NetCoreConsoleClient;
+namespace OidcAuth;
 
 public class FileLogger : ILogger
 {

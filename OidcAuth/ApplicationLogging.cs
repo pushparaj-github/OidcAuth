@@ -2,7 +2,7 @@
 using System;
 using System.Configuration;
 
-namespace NetCoreConsoleClient;
+namespace OidcAuth;
 
 public static class ApplicationLogging
 {
