@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Close Window Example</title>
+</head>
+<body>
+    <p>This window will close automatically in <span id="countdown">60</span> seconds.</p>
+
+    <script>
+        // Function to close the window
+        function closeWindow() {
+            window.close();
+        }
+
+        // Initialize the countdown value
+        let countdownValue = 60;
+
+        // Function to update the countdown
+        function updateCountdown() {
+            if (countdownValue > 0) {
+                countdownValue--;
+                document.getElementById('countdown').innerText = countdownValue;
+            } else {
+                closeWindow();
+            }
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Set a timer to close the window after 1 minute (60000 milliseconds)
+        setTimeout(closeWindow, 60000);
+    </script>
+</body>
+</html>
